@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+	<style type="text/css">
+		canvas
+		{
+			border: solid;
+		}
+	</style>
+	<script>
+		window.addEventListener('load',	init);
+		function init(){
+			
+			var canvas = document.getElementById('micanvas');
+			var ctx = canvas.getContext("2d");
+			var x = 20, y = 20, radio = 10, anguloInicial = 90, anguloFinal = 180, antiReloj = true;
+			ctx.arc(x,y,radio,a_radianes(anguloInicial),a_radianes(anguloFinal),antiReloj);
+			ctx.arc(x+30,y+30,radio+20,a_radianes(anguloInicial),a_radianes(anguloFinal),antiReloj);
+			ctx.stroke();
+		}
+		function a_radianes(grados){
+			return(grados * Math.PI)/180;
+		}
+		</script>
+</head>
+<body>
+	<canvas id="micanvas">
+		Tu navegador no soporta Canvas.
+	</canvas>
+</body>
+</html>
